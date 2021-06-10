@@ -1,0 +1,50 @@
+#content {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 60vw;
+    overflow: hidden;
+}
+h1 {
+    text-align: center;
+}
+#new-task {
+    display: inline-flex;
+    margin: auto;
+    width: 100%;
+}
+#input-task {
+    position: relative;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid blueviolet;
+}
+#add-task-button {
+    position: relative;
+    height: 30px;
+    width: 120px;
+    background-color: blueviolet;
+    border: none;
+    color: gainsboro;
+    font-weight: bold;
+}
+#task-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+li {
+    display: flex;
+    margin-top: 1em;
+}
+.task {
+    padding-left: 5px;
+    flex-grow: 1;
+}
+.delete-btn {
+    width: 60px;
+    height: 20px;
+}
