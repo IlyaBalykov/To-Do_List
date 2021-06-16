@@ -1,15 +1,30 @@
 let add_btn = document.getElementById("add-task-button");
 let input_task = document.getElementById("input-task");
 let ul = document.getElementsByTagName("ul");
-// let context = '<input type="checkbox"><span class="task">'+ inputText.value +'</span><button class="delete-btn" onclick="return this.parentNode.remove();"></button>';
 add_btn.addEventListener("click", new_task);
-
+elem();
+check();
+function check() {
+    let checkbox = document.querySelectorAll("li > input");
+    checkbox.forEach(function (done) {
+        done.addEventListener("click", function () {
+            const span = this.parentElement.getElementsByTagName("span");
+            if(this.checked) {
+                span[0].style.textDecoration = "line-through";
+                console.log("Выбрано");
+            } else {
+                span[0].removeAttribute("style");
+                console.log("Выделение снято");
+            }
+        })
+    })
+}
 function elem() {
     let del_btn = document.querySelectorAll(".delete-btn");
     del_btn.forEach(function (item) {
         item.addEventListener("click", function () {
             this.parentNode.remove();
-            alert("Запись удалена");
+            console.log("Запись удалена");
         })
     })
 }
@@ -32,6 +47,7 @@ function new_task() {
         button.appendChild(del_btn);
         input_task.value = "";
         elem();
+        check();
     } else {
         alert("Введите задание");
     }
